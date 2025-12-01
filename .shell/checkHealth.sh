@@ -1,4 +1,4 @@
 sudo apt-get install jq
-export API_URL_SSM="`aws ssm get-parameter --name /hw-w-file-storage/$1/api/url`"
+export API_URL_SSM="`aws ssm get-parameter --name /fsa-00ca28d3/$1/api/url`"
 export API_URL=`echo $API_URL_SSM | jq -r '.Parameter.Value'`
 curl --fail "$API_URL$2"
